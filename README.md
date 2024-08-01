@@ -38,7 +38,7 @@ Y se nos pide crear una nueva columna que contenga el CP de cada domicilio que s
 | 4      | Emeterio Arenas 5800 9 Toluca       | NaN
 
 
-> :bulb: **Solución:** hay muchas soluciones posibles, pero usando expresiones regulares queda de la sig. manera:
+> :bulb: **Solución.** Hay muchas soluciones posibles, pero usando expresiones regulares queda de la sig. manera:
 ``` py
 df['CP'] = df.Direccion.str.extract(r"(\d{4})").astype(str)
 df.loc[~df.CP.astype(float).isin(CP),'CP'] = np.nan
@@ -58,15 +58,15 @@ Tenemos el siguiente dataset con muchas frases:
 | The juice of lemons makes fine punch. |
 | The box was thrown beside the parked truck. |
 
-Y deseamos conocer la distribución del total de **palabras** que existen \\\
+Y deseamos conocer la distribución del total de **palabras** que existen 
 
-> :bulb: **Solución:** usando expresiones regulares queda de la sig. manera:
+> :bulb: **Solución.** Usando expresiones regulares queda de la sig. manera:
  
 ``` R
 head(sents,7)
 
-( sents_count <- sents %>% mutate(sentence = str_to_lower(str_remove_all(sentence,"[:punct:]"))) %>% 
-    mutate(pals = str_count(sentence,"\\s+")+1) %>% count(pals) %>% arrange(desc(n)) )
+( sents_count <- sents %>% mutate(Sent = str_to_lower(str_remove_all(Sent,"[:punct:]"))) %>% 
+    mutate(pals = str_count(Sent,"\\s+")+1) %>% count(pals) %>% arrange(desc(n)) )
 ```
   | pals |     n |
   | ----------- |  ----------- | 
@@ -79,7 +79,7 @@ head(sents,7)
 |        5 |   10 |
 |     12 |    2 |
 
-En el último abuse de la sintaxis de R usando [POSIX Character Classes](https://www.gastonsanchez.com/r4strings/character-sets.html) pero podría usarse la expresión [^\w\s]. No obstante, el punto es ver como el 
+En el último ejemplo abuse de la sintaxis de R usando [POSIX Character Classes](https://www.gastonsanchez.com/r4strings/character-sets.html) pero podría usarse la expresión [^\w\s]. No obstante, el punto es ver como el 
 código tanto en Python como R es más limpio, legible y mucho más rápido en ejecución. 
 
 **Cuanto más sepas usar expresiones regulares más fácil y exhaustiva será la limpieza de datos 🥰.**
