@@ -1,7 +1,7 @@
 # Importancia de las expresiones regulares en la limpieza de datos
 
 Creo que muchos analistas y científicos de datos no dimensionan la importancia que tienen las expresiones regulares. No solo
-para identificar patrones y crear condiciones basadas en ellos (como en el código que hice algunos años [Clasificación de correos y teléfonos usando Python](https://github.com/Cuadernin/class_tel_email/tree/main)) sino que simplifican muchísimo el trabajo arduo
+para identificar patrones y crear condiciones basadas en ellos (como en el código que hice algunos años [Clasificación de correos y teléfonos usando Python](https://github.com/Cuadernin/class_tel_email/tree/main)) sino que simplifican muchísimo el arduo trabajo
 de limpieza de datos.
 
 Estás están presentes en un gran número de lenguajes de programación como _Python, R, SQL, Javascript_, entre otros, debido a que es una sintaxis universal para identificar carácteres en una cadena de texto.
